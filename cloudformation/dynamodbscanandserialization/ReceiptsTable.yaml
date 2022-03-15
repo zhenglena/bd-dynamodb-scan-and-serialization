@@ -1,0 +1,135 @@
+Resources:
+  ReceiptsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      "AttributeDefinitions": [
+      {
+        "AttributeName": "customerId",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "purchaseDate",
+        "AttributeType": "S"
+      }
+      ]
+      "KeySchema": [
+      {
+        "AttributeName": "customerId",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "purchaseDate",
+        "KeyType": "RANGE"
+      }
+      ]
+      BillingMode: PAY_PER_REQUEST
+      TableName: "DynamoDBScan-Receipts"
+  LambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: "/"
+      Policies:
+        - PolicyName: dynamodbAccessRole
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - dynamodb:*
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - logs:*
+                Resource: "*"
+  InitFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        ZipFile: >
+          const AWS = require("aws-sdk");
+          const response = require('./cfn-response');
+          const docClient = new AWS.DynamoDB.DocumentClient();
+          exports.handler = function(event, context) {
+            console.log(JSON.stringify(event,null,3));
+            var params = {
+              RequestItems: {
+                "DynamoDBScan-Receipts": [
+                  {
+                    PutRequest: {
+                      Item: {
+                        customerId: "98375E9D-7D3E-4DBF-A5AC-C7800B608F8E",
+                        purchaseDate: "2020-04-20T16:06:53.794-07:00[America/Los_Angeles]",
+                        salesTotal: 3.50
+                      }
+                    }
+                  },
+                  {
+                    PutRequest: {
+                      Item: {
+                        customerId: "BDE8D0CC-C402-4B05-A98A-6F27F06B1E41",
+                        purchaseDate: "2020-04-25T11:56:50.634-07:00[America/Los_Angeles]",
+                        salesTotal: 3.50
+                      }
+                    }
+                  },
+                  {
+                    PutRequest: {
+                      Item: {
+                        customerId: "BDE8D0CC-C402-4B05-A98A-6F27F06B1E41",
+                        purchaseDate: "2020-04-26T11:56:50.634-07:00[America/Los_Angeles]",
+                        salesTotal: 3.50
+                      }
+                    }
+                  },
+                  {
+                    PutRequest: {
+                      Item: {
+                        customerId: "BDE8D0CC-C402-4B05-A98A-6F27F06B1E41",
+                        purchaseDate: "2020-04-27T11:56:50.634-07:00[America/Los_Angeles]",
+                        salesTotal: 3.50
+                      }
+                    }
+                  },
+                  {
+                    PutRequest: {
+                      Item: {
+                        customerId: "FA6F10C7-95AF-4677-AB5E-5E223E6DC9F4",
+                        purchaseDate: "2020-04-24T17:06:53.888-07:00[America/Los_Angeles]",
+                        salesTotal: 8.50
+                      }
+                    }
+                  }
+                ]
+              }
+            };
+            docClient.batchWrite(params, function(err, data) {
+              if (err) {
+                response.send(event, context, "FAILED", {});
+              } else {
+                response.send(event, context, "SUCCESS", {});
+              }
+            });
+          };
+      Handler: index.handler
+      Role:
+        Fn::GetAtt: [ LambdaRole , "Arn" ]
+      # 2020-02-27: [bp] updated from nodejs10.x in case it matters
+      Runtime: nodejs12.x
+      Timeout: 60
+  InitializeReceiptsTable:
+    Type: Custom::InitFunction
+    DependsOn: ReceiptsTable
+    Properties:
+      ServiceToken:
+        Fn::GetAtt: [ InitFunction , "Arn" ]
+      DynamoTableName:
+        Ref: ReceiptsTable

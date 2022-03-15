@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.admin.model;
+package com.amazon.ata.dynamodbscanandserialization.icecream.admin.model;
 
 public class GetCustomerReceiptsResponse {
 }

@@ -1,8 +1,8 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dao;
+package com.amazon.ata.dynamodbscanandserialization.icecream.dao;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.converter.ZonedDateTimeConverter;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Receipt;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Sundae;
+import com.amazon.ata.dynamodbscanandserialization.icecream.converter.ZonedDateTimeConverter;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Sundae;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 

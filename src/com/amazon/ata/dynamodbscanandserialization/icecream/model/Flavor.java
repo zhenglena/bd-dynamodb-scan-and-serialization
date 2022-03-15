@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model;
+package com.amazon.ata.dynamodbscanandserialization.icecream.model;
 
 import com.google.common.collect.ImmutableMap;
 

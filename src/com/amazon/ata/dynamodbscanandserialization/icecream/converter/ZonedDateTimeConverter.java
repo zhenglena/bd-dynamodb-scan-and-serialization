@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.converter;
+package com.amazon.ata.dynamodbscanandserialization.icecream.converter;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverter;
 

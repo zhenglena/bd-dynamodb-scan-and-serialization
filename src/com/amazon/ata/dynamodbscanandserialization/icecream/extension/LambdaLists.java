@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.extension;
+package com.amazon.ata.dynamodbscanandserialization.icecream.extension;
 
 import java.util.List;
 

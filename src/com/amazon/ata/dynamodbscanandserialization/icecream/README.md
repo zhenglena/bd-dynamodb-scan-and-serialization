@@ -1,18 +1,5 @@
 # Still in the ice cream business...
 
-**branch name:** dynamodbscanandserialization-classroom
-
-**AWS account:** (account number for AWS account that ATA gave you --
-[find on Conduit](https://access.amazon.com/aws/accounts) )
-
-**role:** IibsAdminAccess-DO-NOT-DELETE
-
-**RDE workflows:**
-- `dynamodbscanandserialization-classroom-phase0`
-- `dynamodbscanandserialization-classroom-phase1`
-- `dynamodbscanandserialization-classroom-phase2`
-- `dynamodbscanandserialization-classroom-phase3`
-
 ## Introduction
 We are returning to the `IceCreamParlorService` you have seen in many previous lessons.
 
@@ -35,15 +22,14 @@ on the `ReceiptDao` that will provide access to `Receipt`s.
 (should be your AWS account that ATA gave you).
 1. Create the table we'll be using for this activity by running this aws CLI command:
    ```none
-   aws cloudformation create-stack --region us-west-2 --stack-name dynamodbscanandserialization-receiptstable --template-body file://cloudformation/dynamodbscanandserialization/classroom/ReceiptsTable.yaml --capabilities CAPABILITY_IAM
+   aws cloudformation create-stack --region us-west-2 --stack-name dynamodbscanandserialization-receiptstable --template-body file://cloudformation/dynamodbscanandserialization/ReceiptsTable.yaml --capabilities CAPABILITY_IAM
    ```
 1. Make sure the aws command runs without error.
 1. Log into your AWS account on Conduit and verify that the table exists and has
    sample data.
 1. Discuss the different attributes with your team to make sure you all understand
    what they represent.
-1. As a final verification, run the `dynamodbscanandserialization-classroom-phase0` RDE workflow
-   and make sure it passes.
+1. As a final verification, run the `Phase0Test` and make sure it passes.
 
 GOAL: Receipts table is created in your AWS Account, the attributes make sense, and your ice cream
 parlor can generate a receipt.
@@ -51,7 +37,7 @@ parlor can generate a receipt.
 Phase 0 is complete when:
 - You understand the Receipt data type
 - Receipts table exists with some sample data
-- `dynamodbscanandserialization-classroom-phase0` RDE workflow passes
+- `Phase0Test` passes
 
 ## Phase 1: Calculate total sales for time period
 
@@ -82,13 +68,13 @@ Record your group's answers to the following questions in the class digest, then
 * What is Jeff Bezos's birthday in `ISO_DATE_TIME` format?
 
 HINTS:
-* [How can I use ZonedDateTimes in a filter expression?](./hints/hint-phase1.md)
+* [How can I use ZonedDateTimes in a filter expression?](./hints/hint_phase1.md)
 
 GOAL: Implement `getSalesForTimePeriod` and `getSalesBetweenDates`
 so we can request the total sales for a specific time period.
 
 Phase 1 is complete when:
-- `dynamodbscanandserialization-classroom-phase1` RDE workflow passes
+- `Phase1Test` passes
 
 ## Phase 2: Retrieve customer receipts little by little
 
@@ -111,7 +97,7 @@ Record your group's answers to the following questions in the class digest, then
 GOAL: Implement `getCustomerReceipts` and `getReceiptsPaginated` so we can retrieve all receipts in batches.
 
 Phase 2 is complete when:
-- `dynamodbscanandserialization-classroom-phase2` RDE workflow passes
+- `Phase2Test` passes
 
 ## Phase 3: Long live the sundaes!
 
@@ -140,7 +126,7 @@ Record your group's answers to the following question in the class digest, then 
 GOAL: Update `Receipt` and `ReceiptDao` to include the sundae order.
 
 Phase 3 is complete when:
- - `dynamodbscanandserialization-classroom-phase3` RDE workflow passes
+ - `Phase3Test` passes
  
 ## Extension - Limit and filter
 

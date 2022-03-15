@@ -1,6 +1,6 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream;
+package com.amazon.ata.dynamodbscanandserialization.icecream;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Ingredient;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Ingredient;
 
 import java.util.ArrayList;
 import java.util.List;

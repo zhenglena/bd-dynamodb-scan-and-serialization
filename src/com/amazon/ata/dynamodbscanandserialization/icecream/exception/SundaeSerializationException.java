@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.exception;
+package com.amazon.ata.dynamodbscanandserialization.icecream.exception;
 
 public class SundaeSerializationException extends RuntimeException {
     private static final long serialVersionUID = 7569877243054721465L;

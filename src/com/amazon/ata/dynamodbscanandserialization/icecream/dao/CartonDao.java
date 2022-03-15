@@ -1,6 +1,6 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dao;
+package com.amazon.ata.dynamodbscanandserialization.icecream.dao;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Carton;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Carton;
 
 import com.google.common.collect.ImmutableList;
 

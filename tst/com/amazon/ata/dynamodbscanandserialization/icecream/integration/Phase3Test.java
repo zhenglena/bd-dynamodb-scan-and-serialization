@@ -1,11 +1,11 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.integration;
+package com.amazon.ata.dynamodbscanandserialization.icecream.integration;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.IceCreamParlorService;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.converter.ZonedDateTimeConverter;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dependency.DaggerIceCreamParlorServiceComponent;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dependency.IceCreamParlorServiceComponent;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Receipt;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Sundae;
+import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorService;
+import com.amazon.ata.dynamodbscanandserialization.icecream.converter.ZonedDateTimeConverter;
+import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.DaggerIceCreamParlorServiceComponent;
+import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.IceCreamParlorServiceComponent;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Sundae;
 
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;

@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model;
+package com.amazon.ata.dynamodbscanandserialization.icecream.model;
 
 /**
  * Known Ingredients that are used to make flavors of ice cream.

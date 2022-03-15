@@ -1,6 +1,6 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model;
+package com.amazon.ata.dynamodbscanandserialization.icecream.model;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.converter.ZonedDateTimeConverter;
+import com.amazon.ata.dynamodbscanandserialization.icecream.converter.ZonedDateTimeConverter;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;

@@ -1,16 +1,16 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream;
+package com.amazon.ata.dynamodbscanandserialization.icecream;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.converter.RecipeConverter;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dao.CartonDao;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dao.ReceiptDao;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dao.RecipeDao;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.exception.CartonCreationFailedException;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.exception.RecipeNotFoundException;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Carton;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Ingredient;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Receipt;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Recipe;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Sundae;
+import com.amazon.ata.dynamodbscanandserialization.icecream.converter.RecipeConverter;
+import com.amazon.ata.dynamodbscanandserialization.icecream.dao.CartonDao;
+import com.amazon.ata.dynamodbscanandserialization.icecream.dao.ReceiptDao;
+import com.amazon.ata.dynamodbscanandserialization.icecream.dao.RecipeDao;
+import com.amazon.ata.dynamodbscanandserialization.icecream.exception.CartonCreationFailedException;
+import com.amazon.ata.dynamodbscanandserialization.icecream.exception.RecipeNotFoundException;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Carton;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Ingredient;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Recipe;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Sundae;
 
 import com.google.common.annotations.VisibleForTesting;
 

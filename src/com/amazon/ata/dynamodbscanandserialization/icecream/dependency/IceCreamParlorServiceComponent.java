@@ -1,7 +1,7 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dependency;
+package com.amazon.ata.dynamodbscanandserialization.icecream.dependency;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.IceCreamParlorAdminService;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.IceCreamParlorService;
+import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorAdminService;
+import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorService;
 
 import dagger.Component;
 

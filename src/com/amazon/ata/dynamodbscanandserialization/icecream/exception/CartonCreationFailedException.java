@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.exception;
+package com.amazon.ata.dynamodbscanandserialization.icecream.exception;
 
 /**
  * Thrown when a carton of ice cream cannot be created for some reason.

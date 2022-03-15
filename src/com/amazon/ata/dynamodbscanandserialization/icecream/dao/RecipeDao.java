@@ -1,8 +1,8 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dao;
+package com.amazon.ata.dynamodbscanandserialization.icecream.dao;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.exception.RecipeNotFoundException;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Ingredient;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Recipe;
+import com.amazon.ata.dynamodbscanandserialization.icecream.exception.RecipeNotFoundException;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Ingredient;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Recipe;
 
 import com.google.common.collect.ImmutableMap;
 

@@ -1,11 +1,11 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.integration;
+package com.amazon.ata.dynamodbscanandserialization.icecream.integration;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.IceCreamParlorAdminService;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.IceCreamParlorService;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dependency.DaggerIceCreamParlorServiceComponent;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dependency.IceCreamParlorServiceComponent;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Receipt;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Sundae;
+import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorAdminService;
+import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorService;
+import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.DaggerIceCreamParlorServiceComponent;
+import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.IceCreamParlorServiceComponent;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Sundae;
 
 import com.google.common.collect.ImmutableList;
 import org.junit.jupiter.api.BeforeEach;

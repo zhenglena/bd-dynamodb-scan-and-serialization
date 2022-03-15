@@ -1,7 +1,7 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream;
+package com.amazon.ata.dynamodbscanandserialization.icecream;
 
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dao.ReceiptDao;
-import com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model.Receipt;
+import com.amazon.ata.dynamodbscanandserialization.icecream.dao.ReceiptDao;
+import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;

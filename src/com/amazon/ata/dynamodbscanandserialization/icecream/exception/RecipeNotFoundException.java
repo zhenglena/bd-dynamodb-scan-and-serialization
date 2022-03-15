@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.exception;
+package com.amazon.ata.dynamodbscanandserialization.icecream.exception;
 
 /**
  * Thrown when a recipe cannot be found based on query parameters.

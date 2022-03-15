@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.model;
+package com.amazon.ata.dynamodbscanandserialization.icecream.model;
 
 import java.util.ArrayList;
 import java.util.Collections;

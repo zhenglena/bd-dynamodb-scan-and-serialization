@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.classroom.icecream.dependency;
+package com.amazon.ata.dynamodbscanandserialization.icecream.dependency;
 
 import com.amazon.ata.aws.dynamodb.DynamoDbClientProvider;
 
