@@ -4,7 +4,6 @@ import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorServic
 import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.DaggerIceCreamParlorServiceComponent;
 import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.IceCreamParlorServiceComponent;
 import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
-
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
@@ -19,11 +18,10 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Phase0Test {
+
     private static final IceCreamParlorServiceComponent DAGGER = DaggerIceCreamParlorServiceComponent.create();
 
     private static final String TABLE_NAME_PREFIX = "DynamoDBScan-";

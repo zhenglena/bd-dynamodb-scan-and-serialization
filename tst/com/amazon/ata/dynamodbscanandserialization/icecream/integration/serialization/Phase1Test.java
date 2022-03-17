@@ -1,4 +1,4 @@
-package com.amazon.ata.dynamodbscanandserialization.icecream.integration;
+package com.amazon.ata.dynamodbscanandserialization.icecream.integration.serialization;
 
 import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorService;
 import com.amazon.ata.dynamodbscanandserialization.icecream.converter.ZonedDateTimeConverter;
@@ -6,7 +6,6 @@ import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.DaggerIce
 import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.IceCreamParlorServiceComponent;
 import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
 import com.amazon.ata.dynamodbscanandserialization.icecream.model.Sundae;
-
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
@@ -21,12 +20,10 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
-public class Phase3Test {
+public class Phase1Test {
     private static final IceCreamParlorServiceComponent DAGGER = DaggerIceCreamParlorServiceComponent.create();
     private static final List<String> ONE_SCOOP = ImmutableList.of("Chocolate");
     private static final List<String> TWO_SCOOPS = ImmutableList.of("Chocolate", "Chocolate");

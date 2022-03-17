@@ -1,13 +1,11 @@
-package com.amazon.ata.dynamodbscanandserialization.icecream.integration;
+package com.amazon.ata.dynamodbscanandserialization.icecream.integration.scanning;
 
 import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorAdminService;
 import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorService;
 import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.DaggerIceCreamParlorServiceComponent;
 import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.IceCreamParlorServiceComponent;
-import com.amazon.ata.dynamodbscanandserialization.icecream.exception.CartonCreationFailedException;
 import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
 import com.amazon.ata.dynamodbscanandserialization.icecream.model.Sundae;
-
 import com.google.common.collect.ImmutableList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,11 +13,9 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 

@@ -1,7 +1,8 @@
-package com.amazon.ata.dynamodbscanandserialization.icecream.integration;
+package com.amazon.ata.dynamodbscanandserialization.icecream.integration.scanning;
 
 import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorAdminService;
 import com.amazon.ata.dynamodbscanandserialization.icecream.IceCreamParlorService;
+//import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.DaggerIceCreamParlorServiceComponent;
 import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.DaggerIceCreamParlorServiceComponent;
 import com.amazon.ata.dynamodbscanandserialization.icecream.dependency.IceCreamParlorServiceComponent;
 import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
