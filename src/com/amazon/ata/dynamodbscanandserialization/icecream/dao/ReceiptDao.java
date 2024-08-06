@@ -5,11 +5,15 @@ import com.amazon.ata.dynamodbscanandserialization.icecream.model.Receipt;
 import com.amazon.ata.dynamodbscanandserialization.icecream.model.Sundae;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBScanExpression;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.inject.Inject;
 
 /**
@@ -55,7 +59,18 @@ public class ReceiptDao {
      * @return the total values of sundae sales for the requested time period
      */
     public BigDecimal getSalesBetweenDates(ZonedDateTime fromDate, ZonedDateTime toDate) {
-        return new BigDecimal(-1);
+        Map<String, AttributeValue> valueMap = new HashMap<>();
+        valueMap.put(":fromDate", new AttributeValue().withS(converter.convert(fromDate)));
+        valueMap.put(":toDate", new AttributeValue().withS(converter.convert(toDate)));
+
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression()
+                .withFilterExpression("purchaseDate between :fromDate and :toDate")
+                .withExpressionAttributeValues(valueMap);
+
+        return mapper.scan(Receipt.class, scanExpression)
+                .stream()
+                .map(Receipt::getSalesTotal)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     /**
@@ -67,6 +82,17 @@ public class ReceiptDao {
      * @return a list of Receipts
      */
     public List<Receipt> getReceiptsPaginated(int limit, Receipt exclusiveStartKey) {
-        return Collections.emptyList();
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression()
+                .withLimit(limit);
+
+        if (exclusiveStartKey != null) {
+            Map<String, AttributeValue> startKeyMap = new HashMap<>();
+            startKeyMap.put("customerId", new AttributeValue().withS(exclusiveStartKey.getCustomerId()));
+            startKeyMap.put("purchaseDate",
+                    new AttributeValue().withS(converter.convert(exclusiveStartKey.getPurchaseDate())));
+            scanExpression.setExclusiveStartKey(startKeyMap);
+        }
+
+        return mapper.scanPage(Receipt.class, scanExpression).getResults();
     }
 }
